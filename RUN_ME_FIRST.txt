@@ -1,0 +1,80 @@
+================================================================================
+                    EDUTRACK - QUICK START GUIDE
+================================================================================
+
+Follow these steps IN ORDER to run the project:
+
+STEP 1: Install Dependencies
+----------------------------
+Open PowerShell/Command Prompt in this folder and run:
+    npm install
+
+STEP 2: Setup Database Configuration
+-------------------------------------
+1. Create a file named ".env" in this folder (if it doesn't exist)
+2. Add these lines (replace with YOUR MySQL password):
+   
+   DB_HOST=localhost
+   DB_USER=root
+   DB_PASSWORD=YOUR_MYSQL_PASSWORD_HERE
+   DB_NAME=edutrack
+   DB_PORT=3306
+   JWT_SECRET=my_secret_key_12345
+   PORT=3000
+
+STEP 3: Make sure MySQL is running
+----------------------------------
+Open MySQL and verify it's working:
+    mysql -u root -p
+
+STEP 4: Create Database Tables
+-------------------------------
+Run this command:
+    npm run migrate
+
+STEP 5: Add Sample Data (Optional)
+-----------------------------------
+Run this command:
+    npm run seed
+
+STEP 6: Start the Server
+-------------------------
+Run this command:
+    npm run dev
+
+STEP 7: Open in Browser
+------------------------
+Go to: http://localhost:3000/api-docs
+
+================================================================================
+                        TEST LOGIN CREDENTIALS
+================================================================================
+(After running npm run seed)
+
+Admin:    admin@edutrack.edu    / password123
+Faculty:  faculty1@edutrack.edu / password123
+Student:  student1@edutrack.edu / password123
+
+================================================================================
+                        COMMON ISSUES & FIXES
+================================================================================
+
+Problem: "Cannot find module"
+Fix: Run "npm install" again
+
+Problem: "Cannot connect to database"
+Fix: Check MySQL is running and .env file has correct password
+
+Problem: "Port 3000 already in use"
+Fix: Change PORT=3001 in .env file
+
+Problem: "JWT_SECRET not set"
+Fix: Make sure .env file exists and has JWT_SECRET=something
+
+================================================================================
+For detailed instructions, see: HOW_TO_RUN.md
+================================================================================
+
+
+
+
